@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+header {
+    background: linear-gradient(to right, #8b0000, #f2d6d6, #8b0000);
+    color: #ffffff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Brush Script MT", cursive;
+    font-size: 3em;
+}
+
+header h2 {
+    margin: 0;
+    padding-left: 120px;
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #000000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.current {
+    background-color: white;
+    color: black;
+}
+
+main {
+    padding: 25px;
+}
+
+main h1 {
+    color: #8b1e1e;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+.floatleft {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 340px;
+}
+
+.floatleft img {
+    width: 100%;
+    border: 1px solid #cccccc;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+main h2 {
+    color: #555555;
+}
+
+.cities {
+    font-size: 1.1em;
+}
+
+.cities a {
+    color: #7a1f1f;
+    font-weight: bold;
+}
+
+.cities a:hover {
+    color: #b22222;
+}
+
+footer {
+    clear: both;
+    background: linear-gradient(to right, #8b0000, #f2d6d6, #8b0000);
+    color: white;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
