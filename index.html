@@ -4,200 +4,210 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Newsom Honey Farm</title>
-
 <style>
+:root{
+    --honey-gold:#f4c542;
+    --honey-dark:#d9a91f;
+    --accent:#1f1f1f;
+    --cream:#fff8e8;
+    --paper:#ffffff;
+    --text:#333333;
+    --muted:#6b6b6b;
+    --footer:#6d1b1b;
+    --shadow:0 10px 30px rgba(0,0,0,0.10);
+}
+
+*{
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#fff8e8;
     margin:0;
-    color:#333;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(to bottom, #fffaf0, #fff4d6);
+    color:var(--text);
 }
 
 #wrapper{
-    width:90%;
-    max-width:1100px;
-    margin:0 auto;
-    background:#ffffff;
-    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    width:min(92%, 1120px);
+    margin:32px auto;
+    background:var(--paper);
+    box-shadow:var(--shadow);
+    border-radius:20px;
+    overflow:hidden;
 }
 
 header{
-    background-color:#f4c542;
+    background-color:var(--honey-gold);
     background-image:
         radial-gradient(circle at 25% 25%, rgba(0,0,0,0.08) 12%, transparent 13%),
         radial-gradient(circle at 75% 25%, rgba(0,0,0,0.08) 12%, transparent 13%),
         radial-gradient(circle at 50% 50%, rgba(0,0,0,0.08) 12%, transparent 13%),
         radial-gradient(circle at 25% 75%, rgba(0,0,0,0.08) 12%, transparent 13%),
         radial-gradient(circle at 75% 75%, rgba(0,0,0,0.08) 12%, transparent 13%);
-    background-size:80px 80px;
-    color:black;
-    padding:35px 20px;
+    background-size:90px 90px;
     text-align:center;
+    padding:56px 20px 42px;
+    border-bottom:4px solid var(--accent);
 }
 
 header h1{
     margin:0;
-    font-family:cursive;
-    font-size:72px;
-    color:black;
+    font-size:clamp(2.7rem, 6vw, 4.8rem);
+    color:#111;
+    letter-spacing:1px;
 }
 
 header h2{
-    margin-top:10px;
-    font-size:30px;
-    color:black;
-    padding-left:0;
+    margin:12px 0 0;
+    font-size:clamp(1.1rem, 2.5vw, 1.8rem);
+    color:#222;
+    font-weight:normal;
 }
 
 nav{
-    background:black;
+    background:var(--accent);
 }
 
 nav ul{
     list-style:none;
     margin:0;
-    padding:0;
+    padding:14px;
     display:flex;
     justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
 }
 
-nav li{
-    flex:0 1 auto;
-}
-
-nav a{
-    display:block;
-    color:black;
+nav a,
+ul.cities a{
+    display:inline-block;
     text-decoration:none;
-    text-align:center;
-    padding:14px 28px;
     font-weight:bold;
-    background-color:#f4c542;
+    color:#111;
+    background-color:var(--honey-gold);
     background-image:
         radial-gradient(circle at 25% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
         radial-gradient(circle at 75% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
         radial-gradient(circle at 50% 50%, rgba(0,0,0,0.12) 12%, transparent 13%),
         radial-gradient(circle at 25% 75%, rgba(0,0,0,0.12) 12%, transparent 13%),
         radial-gradient(circle at 75% 75%, rgba(0,0,0,0.12) 12%, transparent 13%);
-    background-size:36px 36px;
-    border:2px solid black;
+    background-size:34px 34px;
+    border:2px solid #111;
+    border-radius:999px;
+    padding:12px 24px;
+    transition:transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:0 4px 10px rgba(0,0,0,0.10);
 }
 
 nav a:hover,
-nav .active{
-    background-color:#e0b12f;
-    color:black;
+nav .active,
+ul.cities a:hover{
+    background-color:var(--honey-dark);
+    transform:translateY(-2px);
+    box-shadow:0 8px 16px rgba(0,0,0,0.14);
 }
 
 main{
-    padding:35px 30px;
+    padding:48px 32px 56px;
 }
 
-main h1{
-    color:black;
-    font-size:56px;
-    margin-top:0;
-    text-align:center;
+.hero{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:34px;
+    align-items:center;
+    margin-bottom:38px;
 }
 
-.float-img{
-    float:left;
-    width:340px;
-    margin-right:25px;
-    margin-bottom:15px;
+.hero-text h1{
+    margin:0 0 16px;
+    font-size:clamp(2.2rem, 4vw, 3.6rem);
+    color:#111;
 }
 
-.float-img img{
-    width:100%;
-    border:3px solid #f4c542;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-
-p{
+.hero-text p{
+    font-size:1.1rem;
     line-height:1.8;
-    font-size:19px;
-    margin-bottom:20px;
-}
-
-h2{
-    color:#555;
-    margin-top:40px;
-    text-align:center;
-}
-
-ul.cities{
-    font-size:18px;
-    list-style:none;
-    padding:0;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
-}
-
-ul.cities li{
+    color:#444;
     margin:0;
 }
 
-ul.cities a{
-    display:inline-block;
-    background-color:#f4c542;
-    background-image:
-        radial-gradient(circle at 25% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
-        radial-gradient(circle at 75% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
-        radial-gradient(circle at 50% 50%, rgba(0,0,0,0.12) 12%, transparent 13%),
-        radial-gradient(circle at 25% 75%, rgba(0,0,0,0.12) 12%, transparent 13%),
-        radial-gradient(circle at 75% 75%, rgba(0,0,0,0.12) 12%, transparent 13%);
-    background-size:36px 36px;
-    color:black;
-    font-weight:bold;
-    text-decoration:none;
-    padding:12px 20px;
-    border-radius:30px;
-    border:2px solid black;
-    transition:background-color 0.3s ease, transform 0.2s ease;
+.hero-image img{
+    width:100%;
+    display:block;
+    border-radius:18px;
+    border:4px solid var(--honey-gold);
+    box-shadow:0 8px 22px rgba(0,0,0,0.14);
 }
 
-ul.cities a:hover{
-    background-color:#e0b12f;
-    transform:translateY(-2px);
+.content-card{
+    background:#fffdf7;
+    border:1px solid #f0dfaa;
+    border-radius:18px;
+    padding:34px 28px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+.content-card p{
+    line-height:1.9;
+    font-size:1.06rem;
+    margin:0 0 18px;
+}
+
+.section-title{
+    margin:0 0 24px;
+    text-align:center;
+    color:#222;
+    font-size:2rem;
+}
+
+.learn-more{
+    margin-top:42px;
+}
+
+ul.cities{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
 }
 
 footer{
-    background:#8b0000;
+    background:var(--footer);
     color:white;
-    padding:18px;
-    margin-top:20px;
     text-align:center;
+    padding:20px;
     font-weight:bold;
+    letter-spacing:0.3px;
+}
+
+@media (max-width: 900px){
+    .hero{
+        grid-template-columns:1fr;
+    }
 }
 
 @media (max-width: 768px){
-    header h1{
-        font-size:52px;
+    #wrapper{
+        width:100%;
+        margin:0;
+        border-radius:0;
     }
 
-    header h2{
-        font-size:24px;
+    header{
+        padding:42px 18px 32px;
     }
 
     main{
-        padding:25px 18px;
+        padding:32px 18px 42px;
     }
 
-    main h1{
-        font-size:40px;
-    }
-
-    .float-img{
-        float:none;
-        width:100%;
-        margin:0 0 20px 0;
-    }
-
-    p{
-        font-size:17px;
+    .content-card{
+        padding:24px 18px;
     }
 
     ul.cities{
@@ -205,16 +215,15 @@ footer{
         align-items:center;
     }
 
+    nav a,
     ul.cities a{
-        width:220px;
+        width:230px;
         text-align:center;
     }
 }
 </style>
 </head>
-
 <body>
-
 <div id="wrapper">
 
 <header>
@@ -229,55 +238,57 @@ footer{
 </nav>
 
 <main>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Local Tehachapi Honey</h1>
+            <p>
+                Pure, local honey crafted with care in the beautiful mountain community of Tehachapi, California.
+                Newsom Honey Farm offers a natural product you can trust, harvested and prepared with pride from hive to jar.
+            </p>
+        </div>
 
-<h1>Local Tehachapi Honey</h1>
+        <div class="hero-image">
+            <img src="IMG_6645.jpeg" alt="Local honey jars from Newsom Honey Farm">
+        </div>
+    </section>
 
-<div class="float-img">
-    <img src="IMG_6645.jpeg" alt="Local honey jars">
-</div>
+    <section class="content-card">
+        <p>
+            At Newsom Honey Farm, we take pride in providing high-quality, locally produced honey from Tehachapi, California.
+            Our honey is carefully harvested, processed, and packaged with attention to quality in every step.
+        </p>
 
-<p>
-At Newsom Honey Farm, we take pride in providing high-quality, locally produced honey from the beautiful mountain community of Tehachapi, California.
-</p>
+        <p>
+            We offer honey in a variety of sizes, from 1-pound jars to 40-pound containers, along with pure beeswax products.
+            Whether you are looking for a thoughtful gift, something special for a welcome basket, or a delicious everyday pantry staple,
+            our honey is a natural choice.
+        </p>
 
-<p>
-Our honey is carefully harvested, processed, and packaged with attention to quality in every step.
-</p>
+        <p>
+            In addition to its rich flavor, honey has long been appreciated for its natural qualities, including helping soothe sore throats
+            and supporting skin care. Our honey is raw, pure, and free from additives, giving you a product you can trust.
+        </p>
 
-<p>
-We offer honey in a variety of sizes, from 1-pound jars to 40-pound containers, along with pure beeswax products.
-</p>
+        <p>
+            What sets Newsom Honey Farm apart is our commitment to quality and transparency. Our honey is harvested, processed, packaged,
+            and sold by the same dedicated beekeeper, so we know exactly where it comes from.
+        </p>
 
-<p>
-Whether you are looking for a thoughtful gift, something special for a welcome basket, or a delicious everyday pantry staple, our honey is a natural choice.
-</p>
+        <p>
+            Taste the difference that comes from local care, craftsmanship, and a passion for beekeeping.
+        </p>
+    </section>
 
-<p>
-In addition to its rich flavor, honey has long been appreciated for its natural qualities, including helping soothe sore throats and supporting skin care.
-</p>
-
-<p>
-Our honey is raw, pure, and free from additives, giving you a product you can trust.
-</p>
-
-<p>
-What sets Newsom Honey Farm apart is our commitment to quality and transparency. Our honey is harvested, processed, packaged, and sold by the same dedicated beekeeper, so we know exactly where it comes from.
-</p>
-
-<p>
-Taste the difference that comes from local care, craftsmanship, and a passion for beekeeping.
-</p>
-
-<h2>To learn more:</h2>
-
-<ul class="cities">
-    <li><a href="https://www.facebook.com/profile.php?id=61567826264554" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <li><a href="https://m.facebook.com/story.php?story_fbid=pfbid0fRfh2FCiZzMq5Yyw6skFF6TZukStVqtfWwBUyrE5q6sGd1GWPfKEqhsPEY9pFVpJl&id=61567826264554" target="_blank" rel="noopener noreferrer">Products</a></li>
-    <li><a href="https://www.facebook.com/profile.php?id=61567826264554" target="_blank" rel="noopener noreferrer">About Us</a></li>
-    <li><a href="https://m.facebook.com/story.php?story_fbid=pfbid036BEWX6J2Z9cVPHGXwmJqn9P9MHiU3wwhH7qKp3LhR4Q7YPYaMM3xVzVZXPQerShdl&id=61567826264554" target="_blank" rel="noopener noreferrer">Beeswax</a></li>
-    <li><a href="https://m.facebook.com/groups/465923682110757/permalink/1321429549893495/?" target="_blank" rel="noopener noreferrer">Local Markets</a></li>
-</ul>
-
+    <section class="learn-more">
+        <h2 class="section-title">Learn More</h2>
+        <ul class="cities">
+            <li><a href="https://www.facebook.com/profile.php?id=61567826264554" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://m.facebook.com/story.php?story_fbid=pfbid0fRfh2FCiZzMq5Yyw6skFF6TZukStVqtfWwBUyrE5q6sGd1GWPfKEqhsPEY9pFVpJl&id=61567826264554" target="_blank" rel="noopener noreferrer">Products</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61567826264554" target="_blank" rel="noopener noreferrer">About Us</a></li>
+            <li><a href="https://m.facebook.com/story.php?story_fbid=pfbid036BEWX6J2Z9cVPHGXwmJqn9P9MHiU3wwhH7qKp3LhR4Q7YPYaMM3xVzVZXPQerShdl&id=61567826264554" target="_blank" rel="noopener noreferrer">Beeswax</a></li>
+            <li><a href="https://m.facebook.com/groups/465923682110757/permalink/1321429549893495/?" target="_blank" rel="noopener noreferrer">Local Markets</a></li>
+        </ul>
+    </section>
 </main>
 
 <footer>
@@ -285,6 +296,5 @@ Taste the difference that comes from local care, craftsmanship, and a passion fo
 </footer>
 
 </div>
-
 </body>
 </html>
