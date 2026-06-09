@@ -13,7 +13,7 @@
     --paper:#ffffff;
     --text:#333333;
     --muted:#6b6b6b;
-    --footer:#6d1b1b;
+    --footer:#f4c542;
     --shadow:0 10px 30px rgba(0,0,0,0.10);
 }
 
@@ -177,12 +177,20 @@ ul.cities{
 }
 
 footer{
-    background:var(--footer);
-    color:white;
+    background-color:var(--footer);
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
+        radial-gradient(circle at 75% 25%, rgba(0,0,0,0.12) 12%, transparent 13%),
+        radial-gradient(circle at 50% 50%, rgba(0,0,0,0.12) 12%, transparent 13%),
+        radial-gradient(circle at 25% 75%, rgba(0,0,0,0.12) 12%, transparent 13%),
+        radial-gradient(circle at 75% 75%, rgba(0,0,0,0.12) 12%, transparent 13%);
+    background-size:34px 34px;
+    color:#111;
     text-align:center;
     padding:20px;
     font-weight:bold;
     letter-spacing:0.3px;
+    border-top:2px solid #111;
 }
 
 @media (max-width: 900px){
